@@ -1,0 +1,48 @@
+# +---------------------------------------------------------------------------------------------
+# | Fan control
+# |
+# | Run the fan the three cheapest hours in a day, but only if the slot prices is below 200 öre/kWh
+# | and the humidity is high and absolute humidity outdoors is lower than in the garage
+# +---------------------------------------------------------------------------------------------
+
+automation:
+- id: start_fan
+  alias: Start garage fan - low priced hours
+  trigger:
+    - platform: event
+      event_type: start_cheapest_energy_1h_slot_00
+      id: slot_00
+    - platform: event
+      event_type: start_cheapest_energy_1h_slot_01
+      id: slot_01
+    - platform: event
+      event_type: start_cheapest_energy_1h_slot_02
+      id: slot_02
+  condition:
+    - condition: template
+      value_template: "{{ trigger.event.data.price|float < 200.0 }}"
+    - condition: template
+      value_template: "{{ states('sensor.garage_humidity')|float > 60.0 }}"
+    - condition: template
+      value_template: "{{ states('sensor.outdoors_absolute_humidity')|float < states('sensor.garage_absolute_humidity')|float  }}"
+  action:
+    - service: homeassistant.turn_on
+      target:
+        entity_id: switch.garage_fan
+
+- id: stop_fan
+  alias: Stop garage fan
+  trigger:
+    - platform: event
+      event_type: end_cheapest_energy_1h_slot_00
+      id: slot_00
+    - platform: event
+      event_type: end_cheapest_energy_1h_slot_01
+      id: slot_01
+    - platform: event
+      event_type: end_cheapest_energy_1h_slot_02
+      id: slot_02
+  action:
+    - service: homeassistant.turn_off
+      target:
+        entity_id: switch.garage_fan
