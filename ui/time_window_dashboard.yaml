@@ -1,0 +1,66 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Cheapest hours
+    show_header_toggle: false
+    entities:
+      - entity: sensor.cheapest_hours_energy_tomorrow_1h
+        type: custom:multiple-entity-row
+        name: 1h window
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price
+            name: Average
+        secondary_info:
+          entity: sensor.cheapest_hours_energy_tomorrow_1h
+          name: ' '
+      - entity: sensor.cheapest_hours_energy_tomorrow_2h
+        type: custom:multiple-entity-row
+        name: 2h window
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price
+            name: Average
+        secondary_info:
+          entity: sensor.cheapest_hours_energy_tomorrow_2h
+          name: ' '
+      - entity: sensor.cheapest_hours_energy_tomorrow_3h
+        type: custom:multiple-entity-row
+        name: 3h window
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price
+            name: Average
+        secondary_info:
+          entity: sensor.cheapest_hours_energy_tomorrow_3h
+          name: ' '
+      - entity: sensor.cheapest_hours_energy_tomorrow_4h
+        type: custom:multiple-entity-row
+        name: 4h window
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price
+            name: Average
+        secondary_info:
+          entity: sensor.cheapest_hours_energy_tomorrow_4h
+          name: ' '
+      - entity: sensor.cheapest_hours_energy_tomorrow_5h
+        type: custom:multiple-entity-row
+        name: 5h window
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price
+            name: Average
+        secondary_info:
+          entity: sensor.cheapest_hours_energy_tomorrow_5h
+          name: ' '
