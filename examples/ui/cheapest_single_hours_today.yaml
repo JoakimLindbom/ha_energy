@@ -1,0 +1,66 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Cheapest 1h slots today
+    show_header_toggle: false
+    entities:
+      - entity: sensor.cheapest_electricity_1h_slot_00
+        type: custom:multiple-entity-row
+        name: Cheapest 1h
+        unit: öre/kWh
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheapest_electricity_1h_slot_00
+          name: ' '
+      - entity: sensor.cheapest_electricity_1h_slot_01
+        type: custom:multiple-entity-row
+        name: Second cheapest
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheapest_electricity_1h_slot_01
+          name: ' '
+      - entity: sensor.cheapest_electricity_1h_slot_02
+        type: custom:multiple-entity-row
+        name: 3:rd cheapest hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheapest_electricity_1h_slot_02
+          name: ' '
+      - entity: sensor.cheapest_electricity_1h_slot_03
+        type: custom:multiple-entity-row
+        name: 4:th cheapest hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheapest_electricity_1h_slot_03
+          name: ' '
+      - entity: sensor.cheapest_electricity_1h_slot_04
+        type: custom:multiple-entity-row
+        name: 5:th cheapest hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheapest_electricity_1h_slot_04
+          name: ' '

@@ -1,0 +1,23 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Energy prices
+    show_header_toggle: false
+    entities:
+      - entity: sensor.nordpool_kwh_se4_sek_3_10_025
+        type: custom:multiple-entity-row
+        name: Todays prices (SEK/kWh)
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: min
+            name: Min
+          - attribute: max
+            name: Max
+          - attribute: current_price
+            name: Current
+        secondary_info:
+          entity: sensor.nordpool_kwh_se4_sek_3_10_025
+          attribute: average
+          name: 'Average:'

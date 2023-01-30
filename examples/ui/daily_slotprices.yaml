@@ -1,0 +1,26 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Slot prices today
+    show_header_toggle: false
+    entities:
+      - entity: sensor.cheapest_time_windows_today
+        type: custom:multiple-entity-row
+        name: Todays prices (öre/kWh)
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: mean_price_1h
+            name: 1h
+          - attribute: mean_price_2h
+            name: 2h
+          - attribute: mean_price_3h
+            name: 3h
+          - attribute: mean_price_4h
+            name: 4h
+          - attribute: mean_price_5h
+            name: 5h
+        secondary_info:
+          entity: sensor.cheapest_time_windows_today
+          name: 'Average today:'
