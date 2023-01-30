@@ -1,7 +1,7 @@
 # +---------------------------------------------------------------------------------------------
 # | Fan control
 # |
-# | Run the fan the three cheapest hours in a day, but only if the slot prices is below 200 öre/kWh
+# | Run the fan the three cheapest hours in a day, but only if the slot price is below 200 öre/kWh
 # | and the humidity is high and absolute humidity outdoors is lower than in the garage
 # +---------------------------------------------------------------------------------------------
 

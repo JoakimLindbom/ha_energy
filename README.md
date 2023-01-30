@@ -1,16 +1,41 @@
 # ha_energy
 Energy optimisation package for Home Assistant
 
-This is implemented as a Home Assistant package; easiest is to create a packages folder and include the packages folder in this repo there, and then include it from your config.yaml file, e.g.
+## Installation
+### Prerequisites
+You need to install the Nordpool integration in order for this package to work at all.
+Note down the name of the Nordpool sensor.
+
+### Copying files
+Clone the files from this repo to some file location, e.g.:
+```
+git clone git@github.com:JoakimLindbom/ha_energy.git ~/proj/homeassistant
+```
+Since this is implemented as a Home Assistant package; it's easiest to create a packages folder and include the packages folder in this repo there: 
+```
+mkdir /HA_location/config/packages/energy
+cp ~/proj/homeassistant/ha_energy/packages/* /location-to-HA/config/packages/
+```
+Next, check the name of the Nordpool sensor. If it differs from the name I'm having, run the following commands
+```
+cd /HA_location/config/packages/energy
+sed -i 's/nordpool_kwh_se4_sek_2_095_025/the-name-you-noted-before/g' sensors.yaml
+```
+Last, include it from your configuration.yaml file, e.g.
 ```
 homeassistant:
   packages: !include_dir_named packages/
 ```
+Remember to restart HA after you've installed the files.
+
+
 Dashboard example:
 
  ![Dashboard example](/images/Energy_package_UI_example_1.png)
+The ha_energy_ui folder contains some sample cards you can modify and include as per your needs. 
 
-
+## Event driven solution
+## Intro
 The solution is based around events, where you can use these events to trigger automations. All events contain relevant data, e.g. the price or mean price for the time slot starting.
 
 ```
@@ -48,3 +73,4 @@ context:
 | 6th  | start_cheapest_energy_1h_slot_05 | end_cheapest_energy_1h_slot_05 |    
 | 7th  | start_cheapest_energy_1h_slot_06 | end_cheapest_energy_1h_slot_06 |    
 
+You'll find some examples in the ha_energy/examples folder how to use these events for your own needs.
