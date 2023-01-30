@@ -5,6 +5,7 @@ Energy optimisation package for Home Assistant
 ### Prerequisites
 You need to install the Nordpool integration in order for this package to work at all.
 Note down the name of the Nordpool sensor.
+If you want to use the sorted 1 hour slots, you need to have AppDaemon running.
 
 ### Copying files
 Clone the files from this repo to some file location, e.g.:
@@ -28,11 +29,31 @@ homeassistant:
 ```
 Remember to restart HA after you've installed the files.
 
+### AppDaemon
+Copy energy_slot_sort.py to your AppDaemon apps directory, e.g.:
+```
+cp energy_slot_sort.py /HA_location/config/appdaemon/apps
+```
+Update your AddDaemon config file:
+```
+nano /HA_location/config/appdaemon/apps/apps.yaml
+```
+Include the lines below
+```
+energy_slot_sort:
+  module: energy_slot_sort
+  class: energy_slot_sort
+  energy_sensor: sensor.nordpool_kwh_se4_sek_2_095_025
+  time_slots_prefix: cheapest_electricity_1h_slot_
+```
+Replace the Nordpool sensor with a value that you noted before.
 
-Dashboard example:
+## Dashboard example:
+You don't need the dashboards for this to work, but if you want to keep an eye at the prices etc. it's nice to have,
 
  ![Dashboard example](/images/Energy_package_UI_example_1.png)
-The ha_energy_ui folder contains some sample cards you can modify and include as per your needs. 
+The ha_energy_ui folder contains some sample cards you can modify and include as per your needs.
+My examples are using multiple-entity-row, but you can use whichever cards you like.
 
 ## Event driven solution
 ## Intro
