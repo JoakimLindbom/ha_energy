@@ -18,7 +18,7 @@ git clone git@github.com:JoakimLindbom/ha_energy.git ~/proj/homeassistant
 Since this is implemented as a Home Assistant package; it's easiest to create a packages folder and include the packages folder in this repo there: 
 ```
 mkdir /HA_location/config/packages/energy
-cp ~/proj/homeassistant/ha_energy/packages/* /location-to-HA/config/packages/
+cp -r ~/proj/homeassistant/ha_energy/packages/* /HA_location/config/packages/
 ```
 Next, check the name of the Nordpool sensor. If it differs from the name I'm having, run the following commands
 ```
@@ -67,7 +67,7 @@ If you want to avoid morning and evening peaks, you can use the morning and even
 
  ![Dashboard example](/images/Expensive_evening.png)
 
-Workloads that can be run during evening and night will benefit from:
+Workloads that can be run during evening and night (20-08) will benefit from:
 
  ![Dashboard example](/images/Cheapest_evening_night.png)
 
@@ -91,27 +91,36 @@ context:
 ```
 
 ## List of events
-### Consecutive time slots - you'll need e.g. 3 hours that are consecutive to run your dish washer; cou cannot take 3 hours spread around in the day.
+### Consecutive time slots - you'll need e.g. 3 hours that are consecutive to run your dish washer; you cannot take 3 hours spread around in the day.
 
-| Slot | Start                    | End                     |
-|------|--------------------------|-------------------------|
-| 1h   | start_cheapest_energy_1h | end_cheapest_energy_1h  |
-| 2h   | start_cheapest_energy_2h | end_cheapest_energy_2h  |
-| 3h   | start_cheapest_energy_3h | end_cheapest_energy_3h  |    
-| 4h   | start_cheapest_energy_4h | end_cheapest_energy_4h |    
-| 5h   | start_cheapest_energy_5h | end_cheapest_energy_5h  |    
+| Slot | Start                         | End                         |
+|------|-------------------------------|-----------------------------|
+| 1h   | start_cheapest_electricity_1h | end_cheapest_electricity_1h |
+| 2h   | start_cheapest_electricity_2h | end_cheapest_electricity_2h |
+| 3h   | start_cheapest_electricity_3h | end_cheapest_electricity_3h |    
+| 4h   | start_cheapest_electricity_4h | end_cheapest_electricity_4h |    
+| 5h   | start_cheapest_electricity_5h | end_cheapest_electricity_5h |    
+
+
+| Slot | Start                          | End                          |
+|------|--------------------------------|------------------------------|
+| 1h   | start_expensive_electricity_1h | end_expensive_electricity_1h |
+| 2h   | start_expensive_electricity_2h | end_expensive_electricity_2h |
+| 3h   | start_expensive_electricity_3h | end_expensive_electricity_3h |    
+| 4h   | start_expensive_electricity_4h | end_expensive_electricity_4h |    
+| 5h   | start_expensive_electricity_5h | end_expensive_electricity_5h |    
 
 ### Single 1 hour time slots for today - if you need e.g. 3 hours to charge your bike, you'd subscribe to the three first in the list.
 
-| Slot | Start                            | End                            |
-|------|----------------------------------|--------------------------------|
-| 1st  | start_cheapest_energy_1h_slot_00 | end_cheapest_energy_1h_slot_00 |
-| 2nd  | start_cheapest_energy_1h_slot_01 | end_cheapest_energy_1h_slot_01 |
-| 3rd  | start_cheapest_energy_1h_slot_02 | end_cheapest_energy_1h_slot_02 |    
-| 4th  | start_cheapest_energy_1h_slot_03 | end_cheapest_energy_1h_slot_03 |    
-| 5th  | start_cheapest_energy_1h_slot_04 | end_cheapest_energy_1h_slot_04 |    
-| 6th  | start_cheapest_energy_1h_slot_05 | end_cheapest_energy_1h_slot_05 |    
-| 7th  | start_cheapest_energy_1h_slot_06 | end_cheapest_energy_1h_slot_06 |    
+| Slot | Start                                 | End                                 |
+|------|---------------------------------------|-------------------------------------|
+| 1st  | start_cheapest_electricity_1h_slot_00 | end_cheapest_electricity_1h_slot_00 |
+| 2nd  | start_cheapest_electricity_1h_slot_01 | end_cheapest_electricity_1h_slot_01 |
+| 3rd  | start_cheapest_electricity_1h_slot_02 | end_cheapest_electricity_1h_slot_02 |    
+| 4th  | start_cheapest_electricity_1h_slot_03 | end_cheapest_electricity_1h_slot_03 |    
+| 5th  | start_cheapest_electricity_1h_slot_04 | end_cheapest_electricity_1h_slot_04 |    
+| 6th  | start_cheapest_electricity_1h_slot_05 | end_cheapest_electricity_1h_slot_05 |    
+| 7th  | start_cheapest_electricity_1h_slot_06 | end_cheapest_electricity_1h_slot_06 |    
 
 ### Single 1 hour time slots for today, one set for the morning and one set for the afternoon/evening
 
@@ -136,17 +145,17 @@ context:
 | 6th  | start_expensive_electricity_1h_slot_evening_05 | end_expensive_electricity_1h_slot_evening_05 |    
 | 7th  | start_expensive_electricity_1h_slot_evening_06 | end_expensive_electricity_1h_slot_evening_06 |    
 
-### Single 1 hour time slots for evening-/night (20-08), 
+### Single 1 hour time slots for evening-/night (20-08)
 
-| Slot | Start                                            | End                                            |
-|------|--------------------------------------------------|------------------------------------------------|
-| 1st  | start_cheap_electricity_1h_slot_evening_night_00 | end_cheap_electricity_1h_slot_evening_night_00 |
-| 2nd  | start_cheap_electricity_1h_slot_evening_night_01 | end_cheap_electricity_1h_slot_evening_night_01 |
-| 3rd  | start_cheap_electricity_1h_slot_evening_night_02 | end_cheap_electricity_1h_slot_evening_night_02 |    
-| 4th  | start_cheap_electricity_1h_slot_evening_night_03 | end_cheap_electricity_1h_slot_evening_night_03 |    
-| 5th  | start_cheap_electricity_1h_slot_evening_night_04 | end_cheap_electricity_1h_slot_evening_night_04 |    
-| 6th  | start_cheap_electricity_1h_slot_evening_night_05 | end_cheap_electricity_1h_slot_evening_night_05 |    
-| 7th  | start_cheap_electricity_1h_slot_evening_night_06 | end_cheap_electricity_1h_slot_evening_night_06 |    
+| Slot | Start                                               | End                                               |
+|------|-----------------------------------------------------|---------------------------------------------------|
+| 1st  | start_cheapest_electricity_1h_slot_evening_night_00 | end_cheapest_electricity_1h_slot_evening_night_00 |
+| 2nd  | start_cheapest_electricity_1h_slot_evening_night_01 | end_cheapest_electricity_1h_slot_evening_night_01 |
+| 3rd  | start_cheapest_electricity_1h_slot_evening_night_02 | end_cheapest_electricity_1h_slot_evening_night_02 |    
+| 4th  | start_cheapest_electricity_1h_slot_evening_night_03 | end_cheapest_electricity_1h_slot_evening_night_03 |    
+| 5th  | start_cheapest_electricity_1h_slot_evening_night_04 | end_cheapest_electricity_1h_slot_evening_night_04 |    
+| 6th  | start_cheapest_electricity_1h_slot_evening_night_05 | end_cheapest_electricity_1h_slot_evening_night_05 |    
+| 7th  | start_cheapest_electricity_1h_slot_evening_night_06 | end_cheapest_electricity_1h_slot_evening_night_06 |    
 
 
 
