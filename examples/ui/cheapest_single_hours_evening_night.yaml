@@ -1,0 +1,66 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Cheapest 1h slots this evening/night
+    show_header_toggle: false
+    entities:
+      - entity: sensor.cheap_electricity_1h_slot_evening_night_00
+        type: custom:multiple-entity-row
+        name: cheap 1h
+        unit: öre/kWh
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheap_electricity_1h_slot_evening_night_00
+          name: ' '
+      - entity: sensor.cheap_electricity_1h_slot_evening_night_01
+        type: custom:multiple-entity-row
+        name: Second cheap
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheap_electricity_1h_slot_evening_night_01
+          name: ' '
+      - entity: sensor.cheap_electricity_1h_slot_evening_night_02
+        type: custom:multiple-entity-row
+        name: 3:rd cheap hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheap_electricity_1h_slot_evening_night_02
+          name: ' '
+      - entity: sensor.cheap_electricity_1h_slot_evening_night_03
+        type: custom:multiple-entity-row
+        name: 4:th cheap hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheap_electricity_1h_slot_evening_night_03
+          name: ' '
+      - entity: sensor.cheap_electricity_1h_slot_evening_night_04
+        type: custom:multiple-entity-row
+        name: 5:th cheap hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.cheap_electricity_1h_slot_evening_night_04
+          name: ' '

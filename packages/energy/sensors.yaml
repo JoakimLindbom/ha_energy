@@ -30,7 +30,7 @@ sensor:
   - platform: template
     sensors:
 # Checking if hourly price is less than 1 SEK/100 öre or below average for this day
-      energy_low_hour:
+      electricity_low_hour:
         friendly_name: "Low price hour for electricity"
         value_template: >-
           {{ (states('sensor.nordpool_kwh_se4_sek_2_095_025')|float < state_attr('sensor.nordpool_kwh_se4_sek_2_095_025', 'average')|float)
@@ -284,7 +284,7 @@ sensor:
 
   - platform: template
     sensors:
-      cheapest_hours_energy_today_1h:
+      cheapest_hours_electricity_today_1h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 1 hour
         value_template: >
@@ -324,7 +324,7 @@ sensor:
             {%-   endfor                                                                                               -%}
             {%-   set ns.cheapestPrice = ns.cheapestPrice / numberOfSequentialHours                                    -%}
             {{    ns.cheapestPrice }}
-      cheapest_hours_energy_today_2h:
+      cheapest_hours_electricity_today_2h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 2 hours
         value_template: >
@@ -365,7 +365,7 @@ sensor:
             {%-   set ns.cheapestPrice = ns.cheapestPrice / numberOfSequentialHours                                    -%}
             {{    ns.cheapestPrice }}
 
-      cheapest_hours_energy_today_3h:
+      cheapest_hours_electricity_today_3h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 3 hours
         value_template: >
@@ -406,7 +406,7 @@ sensor:
             {%-   set ns.cheapestPrice = ns.cheapestPrice / numberOfSequentialHours                                    -%}
             {{    ns.cheapestPrice }}
 
-      cheapest_hours_energy_today_4h:
+      cheapest_hours_electricity_today_4h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 4 hours
         value_template: >
@@ -447,7 +447,7 @@ sensor:
             {%-   set ns.cheapestPrice = ns.cheapestPrice / numberOfSequentialHours                                    -%}
             {{    ns.cheapestPrice }}
 
-      cheapest_hours_energy_today_5h:
+      cheapest_hours_electricity_today_5h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 5 hours
         value_template: >
@@ -488,7 +488,7 @@ sensor:
             {%-   set ns.cheapestPrice = ns.cheapestPrice / numberOfSequentialHours                                    -%}
             {{    ns.cheapestPrice }}
 
-      cheapest_hours_energy_tomorrow_1h:
+      cheapest_hours_electricity_tomorrow_1h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 1 hour
         value_template: >
@@ -537,7 +537,7 @@ sensor:
               {%- set cheapestPrice = ns.cheapestPrice  -%}
             {%- endif -%}
 
-      cheapest_hours_energy_tomorrow_2h:
+      cheapest_hours_electricity_tomorrow_2h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 2 hours
         value_template: >
@@ -585,7 +585,7 @@ sensor:
               {%- set cheapestPrice = ns.cheapestPrice  -%}
             {%- endif -%}
 
-      cheapest_hours_energy_tomorrow_3h:
+      cheapest_hours_electricity_tomorrow_3h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 3 hours
         value_template: >
@@ -633,7 +633,7 @@ sensor:
               {%- set cheapestPrice = ns.cheapestPrice  -%}
             {%- endif -%}
 
-      cheapest_hours_energy_tomorrow_4h:
+      cheapest_hours_electricity_tomorrow_4h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 4 hours
         value_template: >
@@ -681,7 +681,7 @@ sensor:
               {%- set cheapestPrice = ns.cheapestPrice  -%}
             {%- endif -%}
 
-      cheapest_hours_energy_tomorrow_5h:
+      cheapest_hours_electricity_tomorrow_5h:
         device_class: timestamp
         friendly_name: Cheapest sequential electricity 5 hours
         value_template: >
@@ -731,7 +731,7 @@ sensor:
 
 # Most expensive
 # TODO:  Check if sensor data is available
-      expensive_hours_energy_today_1h:
+      expensive_hours_electricity_today_1h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 1 hour
         value_template: >
@@ -776,7 +776,7 @@ sensor:
               {{ ns.expensivePrice }}            
               {%- set expensivePrice = ns.expensivePrice  -%}
 
-      expensive_hours_energy_today_2h:
+      expensive_hours_electricity_today_2h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 2 hour
         value_template: >
@@ -821,7 +821,7 @@ sensor:
               {{ ns.expensivePrice }}            
               {%- set expensivePrice = ns.expensivePrice  -%}
 
-      expensive_hours_energy_today_3h:
+      expensive_hours_electricity_today_3h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 3 hour
         value_template: >
@@ -866,7 +866,7 @@ sensor:
               {{ ns.expensivePrice }}            
               {%- set expensivePrice = ns.expensivePrice  -%}
 
-      expensive_hours_energy_today_4h:
+      expensive_hours_electricity_today_4h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 4 hour
         value_template: >
@@ -911,7 +911,7 @@ sensor:
               {{ ns.expensivePrice }}            
               {%- set expensivePrice = ns.expensivePrice  -%}
 
-      expensive_hours_energy_today_5h:
+      expensive_hours_electricity_today_5h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 5 hour
         value_template: >
@@ -956,7 +956,7 @@ sensor:
               {{ ns.expensivePrice }}            
               {%- set expensivePrice = ns.expensivePrice  -%}
 
-      expensive_hours_energy_tomorrow_1h:
+      expensive_hours_electricity_tomorrow_1h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 1 hour
         value_template: >
@@ -1005,7 +1005,7 @@ sensor:
               {%- set expensivePrice = ns.expensivePrice  -%}
             {%- endif -%}
 
-      expensive_hours_energy_tomorrow_2h:
+      expensive_hours_electricity_tomorrow_2h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 2 hour
         value_template: >
@@ -1054,7 +1054,7 @@ sensor:
               {%- set expensivePrice = ns.expensivePrice  -%}
             {%- endif -%}
 
-      expensive_hours_energy_tomorrow_3h:
+      expensive_hours_electricity_tomorrow_3h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 3 hour
         value_template: >
@@ -1103,7 +1103,7 @@ sensor:
               {%- set expensivePrice = ns.expensivePrice  -%}
             {%- endif -%}
 
-      expensive_hours_energy_tomorrow_4h:
+      expensive_hours_electricity_tomorrow_4h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 4 hour
         value_template: >
@@ -1152,7 +1152,7 @@ sensor:
               {%- set expensivePrice = ns.expensivePrice  -%}
             {%- endif -%}
 
-      expensive_hours_energy_tomorrow_5h:
+      expensive_hours_electricity_tomorrow_5h:
         device_class: timestamp
         friendly_name: Most expensive sequential electricity 5 hour
         value_template: >
@@ -1209,15 +1209,15 @@ sensor:
            {{ "%0.0f"| format(state_attr("sensor.nordpool_kwh_se4_sek_2_095_025", "average")|float)  }}
        attribute_templates:
          mean_price_1h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_today_1h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_today_1h", "mean_price")|float)  }}
          mean_price_2h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_today_2h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_today_2h", "mean_price")|float)  }}
          mean_price_3h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_today_3h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_today_3h", "mean_price")|float)  }}
          mean_price_4h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_today_4h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_today_4h", "mean_price")|float)  }}
          mean_price_5h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_today_5h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_today_5h", "mean_price")|float)  }}
 
       cheapest_time_windows_tomorrow:
        device_class: monetary
@@ -1226,13 +1226,13 @@ sensor:
            {{ "%0.0f"| format(state_attr("sensor.nordpool_kwh_se4_sek_2_095_025", "average")|float)  }}
        attribute_templates:
          mean_price_1h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_tomorrow_1h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_tomorrow_1h", "mean_price")|float)  }}
          mean_price_2h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_tomorrow_2h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_tomorrow_2h", "mean_price")|float)  }}
          mean_price_3h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_tomorrow_3h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_tomorrow_3h", "mean_price")|float)  }}
          mean_price_4h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_tomorrow_4h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_tomorrow_4h", "mean_price")|float)  }}
          mean_price_5h: >
-           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_energy_tomorrow_5h", "mean_price")|float)  }}
+           {{ "%0.0f"| format(state_attr("sensor.cheapest_hours_electricity_tomorrow_5h", "mean_price")|float)  }}
 

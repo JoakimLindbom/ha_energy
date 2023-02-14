@@ -1,9 +1,9 @@
-dependency_installer:
-  module: install_dependencies
-  class: DependencyInstaller
-
 energy_slot_sort:
   module: energy_slot_sort
   class: energy_slot_sort
   energy_sensor: sensor.nordpool_kwh_se4_sek_2_095_025
-  time_slots_prefix: cheapest_electricity_1h_slot_
+  time_slots_cheap_prefix: cheapest_electricity_1h_slot_
+  time_slots_expensive_prefix: expensive_electricity_1h_slot_
+  time_slots_expensive_morning_prefix: expensive_electricity_1h_slot_morning_
+  time_slots_expensive_evening_prefix: expensive_electricity_1h_slot_evening_
+  time_slots_cheap_evening_night_prefix: cheap_electricity_1h_slot_evening_night_

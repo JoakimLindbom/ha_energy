@@ -1,0 +1,66 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Expensive 1h slots this evening
+    show_header_toggle: false
+    entities:
+      - entity: sensor.expensive_electricity_1h_slot_evening_00
+        type: custom:multiple-entity-row
+        name: Most expensive evening hour
+        unit: öre/kWh
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.expensive_electricity_1h_slot_evening_00
+          name: ' '
+      - entity: sensor.expensive_electricity_1h_slot_evening_01
+        type: custom:multiple-entity-row
+        name: Second expensive evening hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.expensive_electricity_1h_slot_evening_01
+          name: ' '
+      - entity: sensor.expensive_electricity_1h_slot_evening_02
+        type: custom:multiple-entity-row
+        name: 3:rd expensive evening hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.expensive_electricity_1h_slot_evening_02
+          name: ' '
+      - entity: sensor.expensive_electricity_1h_slot_evening_03
+        type: custom:multiple-entity-row
+        name: 4:th expensive evening hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.expensive_electricity_1h_slot_evening_03
+          name: ' '
+      - entity: sensor.expensive_electricity_1h_slot_evening_04
+        type: custom:multiple-entity-row
+        name: 5:th expensive evening hour
+        unit: ' '
+        icon: mdi:cash-multiple
+        show_state: false
+        entities:
+          - attribute: price
+            name: Price
+        secondary_info:
+          entity: sensor.expensive_electricity_1h_slot_evening_04
+          name: ' '
