@@ -63,13 +63,13 @@ You don't need the dashboards for this to work, but if you want to keep an eye a
 
 If you want to avoid morning and evening peaks, you can use the morning and evening events to start and stop automations.
 
- ![Dashboard example](/images/Expensive morning.png)
+ ![Dashboard example](/images/Expensive_morning.png)
 
- ![Dashboard example](/images/Expensive evening.png)
+ ![Dashboard example](/images/Expensive_evening.png)
 
 Workloads that can be run during evening and night will benefit from:
 
- ![Dashboard example](/images/Cheapest evening night.png)
+ ![Dashboard example](/images/Cheapest_evening_night.png)
 
 The ha_energy_ui folder contains some sample cards you can modify and include as per your needs.
 My examples are using multiple-entity-row, but you can use whichever cards you like.
