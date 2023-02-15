@@ -56,9 +56,9 @@ class energy_slot_sort(hass.Hass):
         handle = self.run_daily(self.create_evening_night_sensors, "13:30:10")
         handle = self.run_daily(self.create_morning_evening_sensors, "00:00:10")
         handle = self.run_daily(self.create_24h_sensors, "00:00:05")
-        self.create_evening_night_sensors()
-        self.create_morning_evening_sensors()
-        self.create_24h_sensors()
+        self.create_evening_night_sensors(1) # parameter added as a workaround for kwargs missing
+        self.create_morning_evening_sensors(1)
+        self.create_24h_sensors(1)
 
     def event_listener(self, event, data, kwargs):
         entity = data['entity_id']
@@ -93,7 +93,7 @@ class energy_slot_sort(hass.Hass):
         return price_lst
 
 
-    def create_24h_sensors(self):
+    def create_24h_sensors(self, kwargs):
         self.price_lst = self.get_todays_raw_prices()
         i = 0
         if self.time_slots_cheap_prefix is not None:
@@ -117,7 +117,7 @@ class energy_slot_sort(hass.Hass):
                 self.set_state(e, state=item["start"], attributes=attr)
                 i += 1
 
-    def create_morning_evening_sensors(self):
+    def create_morning_evening_sensors(self, kwargs):
         self.price_lst = self.get_todays_raw_prices()
 
         if self.time_slots_expensive_morning_prefix is not None:
@@ -142,7 +142,7 @@ class energy_slot_sort(hass.Hass):
                 self.set_state(e, state=item["start"], attributes=attr)
                 i += 1
 
-    def create_evening_night_sensors(self):
+    def create_evening_night_sensors(self, kwargs):
         '''
         Calculates cheapest 1h slots between 20:00 and 8:00
         Will only run if tomorrow's data is available
