@@ -6,4 +6,4 @@ energy_slot_sort:
   time_slots_expensive_prefix: expensive_electricity_1h_slot_
   time_slots_expensive_morning_prefix: expensive_electricity_1h_slot_morning_
   time_slots_expensive_evening_prefix: expensive_electricity_1h_slot_evening_
-  time_slots_cheap_evening_night_prefix: cheap_electricity_1h_slot_evening_night_
+  time_slots_cheap_evening_night_prefix: cheapest_electricity_1h_slot_evening_night_

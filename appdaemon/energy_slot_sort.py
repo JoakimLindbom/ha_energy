@@ -10,6 +10,7 @@
 
 import hassapi as hass
 import datetime
+# TODO: Add 10 sec delay for each time slot
 
 class energy_slot_sort(hass.Hass):
     """
@@ -54,7 +55,7 @@ class energy_slot_sort(hass.Hass):
 
         # self.listen_event(self.event_listener, "state_changed")
         handle = self.run_daily(self.create_evening_night_sensors, "13:30:10")
-        handle = self.run_daily(self.create_morning_evening_sensors, "00:00:10")
+        handle = self.run_daily(self.create_morning_evening_sensors, "00:00:07")
         handle = self.run_daily(self.create_24h_sensors, "00:00:05")
         self.create_evening_night_sensors(1) # parameter added as a workaround for kwargs missing
         self.create_morning_evening_sensors(1)
