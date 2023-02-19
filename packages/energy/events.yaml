@@ -380,7 +380,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_00', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_00_event
@@ -395,7 +395,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_00', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_01_event
   alias: Emit event for cheapest 1h electricity slot 01 - start
@@ -406,7 +406,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_01', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_01_event
@@ -421,7 +421,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_01', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_02_event
   alias: Emit event for cheapest 1h electricity slot 02 - start
@@ -432,7 +432,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_02', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_02_event
@@ -447,7 +447,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_02', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_03_event
   alias: Emit event for cheapest 1h electricity slot 03 - start
@@ -458,7 +458,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_03', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_03_event
@@ -473,7 +473,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_03', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_04_event
   alias: Emit event for cheapest 1h electricity slot 04 - start
@@ -484,7 +484,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_04', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_04_event
@@ -499,7 +499,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_04', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_05_event
   alias: Emit event for cheapest 1h electricity slot 05 - start
@@ -510,7 +510,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_05', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_05_event
@@ -525,7 +525,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_05', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_06_event
   alias: Emit event for cheapest 1h electricity slot 06 - start
@@ -536,7 +536,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_06', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_06_event
@@ -551,7 +551,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_06', 'price'))|float }}"
 
 # Testing
 - id: start_cheapest_electricity_1h_slot_17_event
@@ -563,7 +563,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_17
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_17', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_17', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_17_event
@@ -578,7 +578,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_17
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_17', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_17', 'price'))|float }}"
 
 # Events for expensive hours
 # Non-consecutive time slots, sorted by price, full day
@@ -591,7 +591,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_00', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_00_event
@@ -606,7 +606,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_00', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_01_event
   alias: Emit event for expensive 1h electricity slot 01 - start
@@ -617,7 +617,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_01', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_01_event
@@ -632,7 +632,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_01', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_02_event
   alias: Emit event for expensive 1h electricity slot 02 - start
@@ -643,7 +643,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_02', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_02_event
@@ -658,7 +658,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_02', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_03_event
   alias: Emit event for expensive 1h electricity slot 03 - start
@@ -669,7 +669,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_03', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_03_event
@@ -684,7 +684,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_03', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_04_event
   alias: Emit event for expensive 1h electricity slot 04 - start
@@ -695,7 +695,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_04', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_04_event
@@ -710,7 +710,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_04', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_05_event
   alias: Emit event for expensive 1h electricity slot 05 - start
@@ -721,7 +721,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_05', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_05_event
@@ -736,7 +736,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_05', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_06_event
   alias: Emit event for expensive 1h electricity slot 06 - start
@@ -747,7 +747,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_06', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_06_event
@@ -762,7 +762,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_06', 'price'))|float }}"
 
 # Events for expensive hours
 # Non-consecutive time slots, sorted by price, morning
@@ -775,7 +775,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_morning_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_00', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_morning_00_event
@@ -790,7 +790,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_morning_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_00', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_morning_01_event
   alias: Emit event for expensive 1h electricity slot morning 01 - start
@@ -801,7 +801,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_morning_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_01', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_morning_01_event
@@ -816,7 +816,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_morning_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_01', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_morning_02_event
   alias: Emit event for expensive 1h electricity slot morning 02 - start
@@ -827,7 +827,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_morning_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_02', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_morning_02_event
@@ -842,7 +842,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_morning_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_02', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_morning_03_event
   alias: Emit event for expensive 1h electricity slot morning 03 - start
@@ -853,7 +853,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_morning_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_03', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_morning_03_event
@@ -868,7 +868,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_morning_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_03', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_morning_04_event
   alias: Emit event for expensive 1h electricity slot morning 04 - start
@@ -879,7 +879,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_morning_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_04', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_morning_04_event
@@ -894,7 +894,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_morning_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_morning_04', 'price'))|float }}"
 
 # Non-consecutive time slots, sorted by price, evening
 - id: start_expensive_electricity_1h_slot_evening_00_event
@@ -906,7 +906,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_evening_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_00', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_evening_00_event
@@ -921,7 +921,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_evening_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_00', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_evening_01_event
   alias: Emit event for expensive 1h electricity slot evening 01 - start
@@ -932,7 +932,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_evening_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_01', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_evening_01_event
@@ -947,7 +947,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_evening_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_01', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_evening_02_event
   alias: Emit event for expensive 1h electricity slot evening 02 - start
@@ -958,7 +958,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_evening_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_02', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_evening_02_event
@@ -973,7 +973,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_evening_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_02', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_evening_03_event
   alias: Emit event for expensive 1h electricity slot evening 03 - start
@@ -984,7 +984,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_evening_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_03', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_evening_03_event
@@ -999,7 +999,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_evening_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_03', 'price'))|float }}"
 
 - id: start_expensive_electricity_1h_slot_evening_04_event
   alias: Emit event for expensive 1h electricity slot evening 04 - start
@@ -1010,7 +1010,7 @@ automation:
   action:
     - event: start_expensive_electricity_1h_slot_evening_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_04', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.expensive_electricity_1h_slot_evening_04_event
@@ -1025,7 +1025,7 @@ automation:
   action:
     - event: end_expensive_electricity_1h_slot_evening_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.expensive_electricity_1h_slot_evening_04', 'price'))|float }}"
 
 # Events for cheapest hours during evening & night (20-08)
 # Non-consecutive time slots, sorted by price
@@ -1038,7 +1038,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_00', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_00_event
@@ -1053,7 +1053,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_00
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_00', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_00', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_01_event
   alias: Emit event for cheapest 1h electricity slot evening_night 01 - start
@@ -1064,7 +1064,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_01', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_01_event
@@ -1079,7 +1079,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_01
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_01', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_01', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_02_event
   alias: Emit event for cheapest 1h electricity slot evening_night 02 - start
@@ -1090,7 +1090,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_02', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_02_event
@@ -1105,7 +1105,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_02
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_02', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_02', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_03_event
   alias: Emit event for cheapest 1h electricity slot evening_night 03 - start
@@ -1116,7 +1116,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_03', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_03_event
@@ -1131,7 +1131,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_03
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_03', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_03', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_04_event
   alias: Emit event for cheapest 1h electricity slot evening_night 04 - start
@@ -1142,7 +1142,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_04', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_04_event
@@ -1157,7 +1157,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_04
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_04', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_04', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_05_event
   alias: Emit event for cheapest 1h electricity slot evening_night 05 - start
@@ -1168,7 +1168,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_05', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_05_event
@@ -1183,7 +1183,7 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_05
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_05', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_05', 'price'))|float }}"
 
 - id: start_cheapest_electricity_1h_slot_evening_night_06_event
   alias: Emit event for cheapest 1h electricity slot evening_night 06 - start
@@ -1194,7 +1194,7 @@ automation:
   action:
     - event: start_cheapest_electricity_1h_slot_evening_night_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_06', 'price'))|float }}"
     - service: timer.start
       target:
         entity_id: timer.cheapest_electricity_1h_slot_evening_night_06_event
@@ -1209,5 +1209,5 @@ automation:
   action:
     - event: end_cheapest_electricity_1h_slot_evening_night_06
       event_data_template:
-        price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_06', 'price'))|float }}"
+        mean_price: "{{ '%0.1f'| format(state_attr('sensor.cheapest_electricity_1h_slot_evening_night_06', 'price'))|float }}"
 

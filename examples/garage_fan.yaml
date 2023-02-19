@@ -20,7 +20,7 @@ automation:
       id: slot_02
   condition:
     - condition: template
-      value_template: "{{ trigger.event.data.price|float < 200.0 }}"
+      value_template: "{{ trigger.event.data.mean_price|float < 200.0 }}"
     - condition: template
       value_template: "{{ states('sensor.garage_humidity')|float > 60.0 }}"
     - condition: template

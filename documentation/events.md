@@ -1,11 +1,12 @@
 # Event driven solution
 # Intro
-The solution is based around events, where you can use these events to trigger automations. All events contain relevant data, e.g. the price or mean price for the time slot starting.
+The solution is based around events, where you can use these events to trigger automations. All events contain relevant data, e.g. the mean price for the time slot starting.
+the attribute mean_price is used for all events, regardless if it's a one hour slot or a multiple hour slot starting or ending.
 
 ```
 event_type: start_expensive_energy_3h
 data:
-  price: 249.8
+  mean_price: 249.8
 origin: LOCAL
 time_fired: "2023-01-27T18:00:00.031815+00:00"
 context:
