@@ -25,10 +25,7 @@ blueprint:
       selector:
         target:
           entity:
-            domain:
-            - switch
-            - light
-            - fan
+            domain: switch
 
 # TODO: Update helper with trigger id (only if price + number of hours correct) + check in end-automation if the end trigger correlates
 
