@@ -1,0 +1,144 @@
+# +---------------------------------------------------------------------------------------------
+# | Blueprint for running energy consuming payloads during evening and night hours
+# +---------------------------------------------------------------------------------------------
+
+blueprint:
+  name: Run things during cheap electricity hours during evening/night
+  description: Turns an entity on and off during a set number of timeslots
+  domain: automation
+  input:
+    price_threshold_sensor:
+      name: Sensor containing the threshold value (öre/kWh)
+      description: When an event triggest, the current price will be check against the threshold; if same or lower the automation will trigger
+      selector:
+        entity:
+          domain: input_number
+    hours_sensor:
+      name: Number of cheapest hours this automation should be run
+      description: How many of the cheapest evening/night hours do you want this automation to be triggered
+      selector:
+        entity:
+          domain: input_number
+    entity_switch:
+      name: entity_id
+      description: Which entity should be turned on and off
+      selector:
+        target:
+          entity:
+            domain:
+            - switch
+            - light
+            - fan
+
+# TODO: Update helper with trigger id (only if price + number of hours correct) + check in end-automation if the end trigger correlates
+
+trigger:
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_00
+    id: "00"
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_01
+    id: "01"
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_02
+    id: "02"
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_03
+    id: "03"
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_04
+    id: "04"
+  - platform: event
+    event_type: start_cheapest_electricity_1h_slot_evening_night_05
+    id: "05"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_00
+    id: "end"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_01
+    id: "end"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_02
+    id: "end"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_03
+    id: "end"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_04
+    id: "end"
+  - platform: event
+    event_type: end_cheapest_electricity_1h_slot_evening_night_05
+    id: "end"
+condition:
+  - condition: template
+    value_template: "{{ trigger.event.data.mean_price|float <= states('!input price_threshold_sensor')|float }}"
+#      value_template: "{{ trigger.event.data.mean_price|float < 160.0 }}"
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: "00"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 1 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "01"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 2 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "02"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 3 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "03"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 4 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "04"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 5 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "05"
+          - condition: template
+            value_template: >-
+              {{ states('!input hours_sensor')|int >= 6 }}
+        sequence:
+          - service: homeassistant.turn_on
+            target:
+              entity_id: !input entity_switch
+      - conditions:
+          - condition: trigger
+            id: "end"
+        sequence:
+          - service: homeassistant.turn_off
+            target:
+              entity_id: !input entity_switch
