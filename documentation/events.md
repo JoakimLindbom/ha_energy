@@ -39,6 +39,7 @@ This first set of events are calculated within a single day (00-24)
 
 ## Single 1 hour time slots for today
 Some workloads will be just fine with separate hours even if they are spread out, for instance if you need 3 hours to charge your bike, you'd subscribe to the three first in the list. They could happen to be consecutive or they could be spread out and it would not impact the result; you'd still havea fully charged bike when the last hour has ended.
+
 This first set of events are calculated within a single day (00-24)
 
 | Slot | Start                                 | End                                 |
@@ -52,7 +53,7 @@ This first set of events are calculated within a single day (00-24)
 | 7th  | start_cheapest_electricity_1h_slot_06 | end_cheapest_electricity_1h_slot_06 |    
 
 ## Single 1 hour time slots for today, one set for the morning and one set for the afternoon/evening
-These set of events are calculated within a single day (00-12 and 12-24)
+These two sets of events are calculated within a single day (00-12 and 12-24)
 
 | Slot | Start                                          | End                                          |
 |------|------------------------------------------------|----------------------------------------------|
@@ -75,8 +76,8 @@ These set of events are calculated within a single day (00-12 and 12-24)
 | 6th  | start_expensive_electricity_1h_slot_evening_05 | end_expensive_electricity_1h_slot_evening_05 |    
 | 7th  | start_expensive_electricity_1h_slot_evening_06 | end_expensive_electricity_1h_slot_evening_06 |    
 
-## Single 1 hour time slots for evening-/night (20-08)
-This  set of events are calculated for two days (20-08). These are not avaiable until the Nordpool sensor is updated with the values for the next day, which normally is aronud 13:00.
+## Single 1 hour time slots for evening/night (20-08)
+This  set of events are calculated for two days (20-08). They are not available until the Nordpool sensor is updated with the values for the next day, which normally happens around 13:00.
 
 | Slot | Start                                               | End                                               |
 |------|-----------------------------------------------------|---------------------------------------------------|
