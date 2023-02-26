@@ -75,7 +75,7 @@ trigger:
     id: "end"
 condition:
   - condition: template
-    value_template: "{{ trigger.event.data.mean_price|float <= states('!input price_threshold_sensor')|float }}"
+    value_template: "{{ trigger.event.data.mean_price|float <= states(price_threshold_sensor)|float }}"
 #      value_template: "{{ trigger.event.data.mean_price|float < 160.0 }}"
 action:
   - choose:
@@ -84,58 +84,58 @@ action:
             id: "00"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 1 }}
+              {{ states(hours_sensor)|int >= 1 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "01"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 2 }}
+              {{ states(hours_sensor)|int >= 2 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "02"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 3 }}
+              {{ states(hours_sensor)|int >= 3 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "03"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 4 }}
+              {{ states(hours_sensor)|int >= 4 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "04"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 5 }}
+              {{ states(hours_sensor)|int >= 5 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "05"
           - condition: template
             value_template: >-
-              {{ states('!input hours_sensor')|int >= 6 }}
+              {{ states(hours_sensor)|int >= 6 }}
         sequence:
           - service: homeassistant.turn_on
-            entity_id: !input entity_switch
+            entity_id: entity_switch
       - conditions:
           - condition: trigger
             id: "end"
         sequence:
           - service: homeassistant.turn_off
-            entity_id: !input entity_switch
+            entity_id: entity_switch
