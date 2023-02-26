@@ -29,6 +29,11 @@ blueprint:
 
 # TODO: Update helper with trigger id (only if price + number of hours correct) + check in end-automation if the end trigger correlates
 
+variables:
+  price_threshold_sensor: !input price_threshold_sensor
+  hours_sensor: !input hours_sensor
+  entity_switch: !input entity_switch
+
 trigger:
   - platform: event
     event_type: start_cheapest_electricity_1h_slot_evening_night_00
